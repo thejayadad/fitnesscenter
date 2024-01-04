@@ -2,7 +2,7 @@
 import { signIn, signOut } from 'next-auth/react'
 import Link from 'next/link'
 import React from 'react'
-import { FiPlus, FiList, FiActivity, FiHome, FiUser, FiLogOut } from 'react-icons/fi';
+import {  FiUser, FiLogOut } from 'react-icons/fi';
 
 
 const AuthLinks = ({user}) => {
@@ -24,7 +24,6 @@ const AuthLinks = ({user}) => {
                       <span className="ml-1 text-lg links adjustment">LogIn</span>
                     </div> 
               </>
-
               : <>
              <div className="flex items-center gap-4">
              <Link href={'/dashboard'}>Dashboard</Link>
@@ -36,9 +35,7 @@ const AuthLinks = ({user}) => {
                    <FiLogOut />
                   </button>
                       </div>
-                    </div>        
-
-                
+                </div> 
               </>
           }        
     </div>
