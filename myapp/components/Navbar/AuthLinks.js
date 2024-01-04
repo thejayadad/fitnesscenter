@@ -26,7 +26,7 @@ const AuthLinks = ({user}) => {
               </>
               : <>
              <div className="flex items-center gap-4">
-             <Link href={'/dashboard'}>Dashboard</Link>
+             <Link href={`/dashboard/${user.email}`}>Dashboard</Link>
               <div className='adjustment sm:text-2xl md:text-2xl'>
               <button
                   className='flex flex-col'
