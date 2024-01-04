@@ -1,5 +1,7 @@
+import Modals from '@/components/Modal';
 import getServerUser from '@/lib/getServerUser';
 import React from 'react'
+import {FiPlusCircle} from "react-icons/fi"
 
 const Dashboard = async ({params}) => {
     const {email} = params;
@@ -9,11 +11,17 @@ const Dashboard = async ({params}) => {
     console.log("SessionEmail " + sessionEmail.avatar)
 
   return (
-    <section className='px-4 py-8'>
+    <section className='px-4 py-8 text-grey'>
         <div className='max-w-screen-xl mx-auto flex flex-col h-screen'>
-        <div className='flex justify-between gap-4 mx-auto max-w-screen-md'>
-            <h2>Hi {username}</h2>
-            <span>New Workout</span>
+        <div className='flex justify-between gap-8 mx-auto max-w-screen-md'>
+            <h2 className='cursor-pointer'>Hi {username}</h2>
+            <Modals
+                opening={<div className='flex items-center'>
+                <FiPlusCircle className='text-primary text-2xl' /> <span>Workout</span>
+                </div>}
+                title={'Title'}
+                children={'Children'}
+            />
         </div>
         </div>        
     </section>
