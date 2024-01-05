@@ -1,13 +1,17 @@
+'use server'
 import { revalidatePath } from "next/cache";
 import db from "./db";
 import Workout from "@/models/Workout";
 import { redirect } from "next/navigation";
+import getServerUser from "./getServerUser";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 
 export const addWorkout = async (formData) => {
     const userId = await getServerUser(authOptions)
     console.log("Action UserID " + userId)
-    console.log("UserId Email " + userId.email)
+    const userEmail = userId.email
+    console.log("UserId Email " + userEmail)
     const { title, location,duration, distance, intensity, notes } =
     Object.fromEntries(formData);
     try {

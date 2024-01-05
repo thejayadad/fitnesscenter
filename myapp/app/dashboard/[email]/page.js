@@ -1,4 +1,5 @@
 import Modals from '@/components/Modal';
+import CreateWorkoutForm from '@/components/forms/CreateWorkoutForm';
 import getServerUser from '@/lib/getServerUser';
 import React from 'react'
 import {FiPlusCircle} from "react-icons/fi"
@@ -20,7 +21,7 @@ const Dashboard = async ({params}) => {
                 <FiPlusCircle className='text-primary text-2xl' /> <span>Workout</span>
                 </div>}
                 title={'Title'}
-                children={'Children'}
+                children={<CreateWorkoutForm />}
             />
         </div>
         </div>        
