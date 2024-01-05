@@ -15,7 +15,7 @@ const AuthLinks = ({user}) => {
               <div className="circle-icon">
               <button
                   className='text-sm flex flex-col'
-                  onClick={() => signIn('')}
+                  onClick={() => signIn()}
                   >
                    <FiUser className='text-xl' />
                   </button>
